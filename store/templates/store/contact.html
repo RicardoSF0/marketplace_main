@@ -1,0 +1,112 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Contact | {% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .contacto {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contacto h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #5563DE;
+            outline: none;
+            box-shadow: 0 0 8px rgba(85, 99, 222, 0.3);
+        }
+
+        button {
+            width: 100%;
+            background: #5563DE;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        button:hover {
+            background: #3e4abb;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contacto">
+        <h2>Contáctanos 💬</h2>
+        <form action="/enviar" method="POST">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tunombre@ejemplo.com" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+        <div class="footer">
+            © 2025 Tu Empresa — Todos los derechos reservados.
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}
+
