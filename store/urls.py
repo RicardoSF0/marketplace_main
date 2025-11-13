@@ -9,5 +9,5 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('register/', register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='store/login.html', authentication_form=LoginForm), name='login'),
-    path('detail/<int:pk>/', detail, name= 'detail'),
+    path('detail/<int:pk>/', detail, name='detail'),
 ]

@@ -12,24 +12,24 @@ def home(request):
 
     context = {
         'items': items,
-        'categories' : categories
+        'categories': categories
     }
     return render(request, 'store/home.html', context)
 
 def contact(request):
     context = {
-        'msg': 'quieres otros productos contactame!'
+        'msg': 'Quieres otros productos contactame!'
     }
 
     return render(request, 'store/contact.html', context)
 
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
-    related_items = Item.objects.filter(Category=item.category,
+    related_items = Item.objects.filter(category=item.category,
                                         is_sold=False).exclude(pk=pk)[0:3]
     
     context={
-        'item':item,
+        'item': item,
         'related_items': related_items
     }
 
