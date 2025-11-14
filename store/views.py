@@ -3,7 +3,7 @@ from django.contrib.auth import logout
 from .models import Item, Category
 
 from .forms import SignupForm
-
+ 
 
 # Create your views here.
 def home(request):
@@ -25,9 +25,9 @@ def contact(request):
 
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
-    related_items = Item.objects.filter(category=item.category,
+    related_items = Item.objects.filter(category=item.category, 
                                         is_sold=False).exclude(pk=pk)[0:3]
-    
+
     context={
         'item': item,
         'related_items': related_items
@@ -44,9 +44,14 @@ def register(request):
             return redirect('login')
     else:
         form = SignupForm()
-
+    
     context = {
         'form': form
     }
 
     return render(request, 'store/signup.html', context)
+
+def logout_user(request):
+    logout(request)
+
+    return redirect('home')
