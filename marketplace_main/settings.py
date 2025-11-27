@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$cpxg5(oa5hcx31ycwk+9kefeo(8(7o(jm%(vl$bys&d$c+e-n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chloritic-unperfidiously-carlie.ngrok-free.dev']
 
 LOGIN_URL = '/store/login/'
 LOGIN_REDIRECT_URL = '/'
