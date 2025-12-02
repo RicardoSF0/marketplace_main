@@ -265,6 +265,5 @@ El proyecto Marketplace permitió:
 - Implementar autenticación  
 - Renderizar vistas dinámicas con HTML  
 - Trabajar con carga de imágenes  
-- Organizar un proyecto Django real  
-
----
+- Organizar un proyecto Django real
+--------  
